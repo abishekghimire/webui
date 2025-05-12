@@ -21,7 +21,7 @@ export const skinProducts = [
     description:
       "Advanced antioxidant serum that targets common signs of aging including brightness, firmness, fine lines, wrinkles, dark spots & sun spots.",
     price: 19.99,
-    image: "/placeholder.svg?height=300&width=300",
+    image: "/images/vitamin-c-serum-truskin.jpg",
     rating: 5,
     reviewCount: 87,
     ingredients: ["Vitamin C", "Hyaluronic Acid", "Vitamin E", "Witch Hazel"],
@@ -35,7 +35,7 @@ export const skinProducts = [
     description:
       "High-strength vitamin and mineral formula to reduce the appearance of blemishes and congestion.",
     price: 5.9,
-    image: "/placeholder.svg?height=300&width=300",
+    image: "/images/niaciamide10%-zinc1%-the-ordinary.jpeg",
     rating: 4,
     reviewCount: 215,
     ingredients: ["Niacinamide", "Zinc PCA"],
@@ -105,7 +105,7 @@ export const skinProducts = [
     description:
       "Lightweight essence that hydrates and repairs damaged skin while improving skin elasticity.",
     price: 25.0,
-    image: "/placeholder.svg?height=300&width=300",
+    image: "/images/snail-mucin-96%-power-essence-cosrex.jpg",
     rating: 5,
     reviewCount: 145,
     ingredients: ["Snail Secretion Filtrate", "Sodium Hyaluronate", "Betaine"],
