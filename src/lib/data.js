@@ -1,0 +1,163 @@
+export const skinProducts = [
+  {
+    id: "1",
+    name: "Hydrating Facial Cleanser",
+    brand: "CeraVe",
+    category: "Cleanser",
+    description:
+      "A gentle, hydrating cleanser that removes dirt, oil, and makeup without disrupting the skin barrier.",
+    price: 14.99,
+    image: "/placeholder.svg?height=300&width=300",
+    rating: 4,
+    reviewCount: 128,
+    ingredients: ["Ceramides", "Hyaluronic Acid", "Glycerin"],
+    goodFor: ["Dry Skin", "Sensitive Skin", "Normal Skin"],
+  },
+  {
+    id: "2",
+    name: "Vitamin C Serum",
+    brand: "TruSkin",
+    category: "Serum",
+    description:
+      "Advanced antioxidant serum that targets common signs of aging including brightness, firmness, fine lines, wrinkles, dark spots & sun spots.",
+    price: 19.99,
+    image: "/placeholder.svg?height=300&width=300",
+    rating: 5,
+    reviewCount: 87,
+    ingredients: ["Vitamin C", "Hyaluronic Acid", "Vitamin E", "Witch Hazel"],
+    goodFor: ["Aging", "Hyperpigmentation", "Dullness"],
+  },
+  {
+    id: "3",
+    name: "Niacinamide 10% + Zinc 1%",
+    brand: "The Ordinary",
+    category: "Serum",
+    description:
+      "High-strength vitamin and mineral formula to reduce the appearance of blemishes and congestion.",
+    price: 5.9,
+    image: "/placeholder.svg?height=300&width=300",
+    rating: 4,
+    reviewCount: 215,
+    ingredients: ["Niacinamide", "Zinc PCA"],
+    goodFor: ["Acne", "Oily Skin", "Large Pores"],
+  },
+  {
+    id: "4",
+    name: "Daily Moisturizing Lotion",
+    brand: "Cetaphil",
+    category: "Moisturizer",
+    description:
+      "Lightweight, fast-absorbing moisturizer that provides 24-hour hydration for all skin types.",
+    price: 12.99,
+    image: "/placeholder.svg?height=300&width=300",
+    rating: 4,
+    reviewCount: 156,
+    ingredients: ["Glycerin", "Vitamin E", "Avocado Oil"],
+    goodFor: ["All Skin Types", "Dryness", "Sensitive Skin"],
+  },
+  {
+    id: "5",
+    name: "Retinol Serum",
+    brand: "Paula's Choice",
+    category: "Serum",
+    description:
+      "Concentrated retinol serum that visibly improves the appearance of fine lines, wrinkles, and uneven skin tone.",
+    price: 58.0,
+    image: "/placeholder.svg?height=300&width=300",
+    rating: 5,
+    reviewCount: 92,
+    ingredients: ["Retinol", "Peptides", "Vitamin C"],
+    goodFor: ["Aging", "Fine Lines", "Uneven Texture"],
+  },
+  {
+    id: "6",
+    name: "Mineral Sunscreen SPF 50",
+    brand: "EltaMD",
+    category: "Sunscreen",
+    description:
+      "Lightweight, oil-free face sunscreen with transparent zinc oxide protects against UVA/UVB rays.",
+    price: 36.5,
+    image: "/placeholder.svg?height=300&width=300",
+    rating: 5,
+    reviewCount: 178,
+    ingredients: ["Zinc Oxide", "Vitamin E", "Niacinamide"],
+    goodFor: ["All Skin Types", "Sensitive Skin", "Acne-Prone Skin"],
+  },
+  {
+    id: "7",
+    name: "AHA 30% + BHA 2% Peeling Solution",
+    brand: "The Ordinary",
+    category: "Exfoliant",
+    description:
+      "10-minute exfoliating facial that improves the appearance of skin texture and reduces the look of fine lines.",
+    price: 7.2,
+    image: "/placeholder.svg?height=300&width=300",
+    rating: 4,
+    reviewCount: 203,
+    ingredients: ["Glycolic Acid", "Lactic Acid", "Salicylic Acid"],
+    goodFor: ["Texture", "Dullness", "Congestion"],
+  },
+  {
+    id: "8",
+    name: "Snail Mucin 96% Power Essence",
+    brand: "COSRX",
+    category: "Essence",
+    description:
+      "Lightweight essence that hydrates and repairs damaged skin while improving skin elasticity.",
+    price: 25.0,
+    image: "/placeholder.svg?height=300&width=300",
+    rating: 5,
+    reviewCount: 145,
+    ingredients: ["Snail Secretion Filtrate", "Sodium Hyaluronate", "Betaine"],
+    goodFor: ["Hydration", "Redness", "Texture"],
+  },
+];
+
+// Sample reviews data
+export const sampleReviews = [
+  {
+    id: "r1",
+    productId: "1",
+    name: "Sarah J.",
+    skinType: "Dry",
+    skinConcern: "Dryness",
+    usageFrequency: "Twice Daily",
+    usageDuration: "3-6 months",
+    results:
+      "My skin feels much more hydrated and the tightness I used to experience is gone. No more flaky patches!",
+    rating: 5,
+    review:
+      "I've tried so many cleansers that left my skin feeling tight and dry, but this one is amazing! It's gentle, doesn't strip my skin, and leaves it feeling clean but hydrated. I use it morning and night, and my skin has never looked better. Highly recommend for anyone with dry or sensitive skin.",
+    createdAt: new Date().toISOString(),
+  },
+  {
+    id: "r2",
+    productId: "1",
+    name: "Michael T.",
+    skinType: "Combination",
+    skinConcern: "Acne",
+    usageFrequency: "Daily",
+    usageDuration: "1-3 months",
+    results:
+      "My skin is clearer and less irritated. The cleanser removes all my sunscreen and light makeup without causing breakouts.",
+    rating: 4,
+    review:
+      "This cleanser has been great for my combination skin. It cleans well without making my T-zone oilier or my cheeks drier. I've noticed fewer breakouts since I started using it. The only reason I didn't give 5 stars is that it doesn't remove heavy makeup completely, so I need a separate makeup remover on those days.",
+    createdAt: new Date().toISOString(),
+  },
+  {
+    id: "r3",
+    productId: "2",
+    name: "Emily R.",
+    skinType: "Normal",
+    skinConcern: "Hyperpigmentation",
+    usageFrequency: "Daily",
+    usageDuration: "6-12 months",
+    results:
+      "Dark spots from old acne scars have faded significantly. My skin tone is more even and brighter overall.",
+    rating: 5,
+    review:
+      "This vitamin C serum has been a game-changer for my hyperpigmentation. I've been using it every morning for about 8 months, and the difference is remarkable. My dark spots have faded, and my skin looks brighter and more even. It absorbs quickly and doesn't feel sticky. I'll definitely keep repurchasing!",
+    createdAt: new Date().toISOString(),
+  },
+];

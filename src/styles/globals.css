@@ -2,7 +2,7 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #903737;
 }
 
 @theme inline {
@@ -23,4 +23,43 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+/* For WebKit browsers (Chrome, Safari, Edge) */
+.ant-modal-body::-webkit-scrollbar {
+  width: 2px;
+}
+
+.ant-modal-body::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 1px;
+}
+
+.ant-modal-body::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 1px;
+}
+
+.ant-modal-body::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* For Firefox */
+.ant-modal-body {
+  scrollbar-width: thin;
+  scrollbar-color: #888 #f1f1f1;
+}
+
+/* Optional: Style the modal container scroll */
+.ant-modal-wrap::-webkit-scrollbar {
+  width: 2px;
+}
+
+.ant-modal-wrap::-webkit-scrollbar-track {
+  background: rgba(241, 241, 241, 0.5);
+}
+
+.ant-modal-wrap::-webkit-scrollbar-thumb {
+  background: rgba(136, 136, 136, 0.5);
+  border-radius: 1px;
 }
