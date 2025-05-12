@@ -56,7 +56,12 @@ export default function LandingPage() {
             ) : (
               <Button
                 type="text"
-                icon={<MenuOutlined style={{ color: "white" }} />}
+                icon={
+                  <MenuOutlined
+                    size={24}
+                    style={{ color: "white", fontSize: "20px" }}
+                  />
+                }
                 onClick={() => setMobileMenuOpen(true)}
               />
             )}
