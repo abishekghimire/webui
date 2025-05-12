@@ -1,21 +1,24 @@
-import { Button, Form, Input, Grid, Row, Col } from "antd";
+import { Button, Form, Input, Grid, Row, Col, Drawer } from "antd";
 import ProductCard from "@/components/ProductCard";
 import HeroSection from "@/components/HeroSection";
 import { skinProducts } from "@/lib/data";
+import { MenuOutlined } from "@ant-design/icons";
+import { useState } from "react";
 
 const { useBreakpoint } = Grid;
 
 export default function LandingPage() {
   const screens = useBreakpoint();
   const horizontalPadding = "px-4 sm:px-6 lg:px-8";
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
     <div className="min-h-screen bg-background">
       <header
         className={`sticky top-0 z-40 w-full border-b bg-background ${horizontalPadding}`}
       >
-        <div className="container flex h-16 items-center justify-between ">
-          <div className="flex items-center gap-6 md:gap-10 px-34">
+        <div className="container flex h-16 items-center justify-between">
+          <div className="flex items-center gap-6 md:gap-10">
             <a href="/" className="flex items-center space-x-2">
               <span className="inline-block font-bold text-xl">SkinReview</span>
             </a>
@@ -42,12 +45,64 @@ export default function LandingPage() {
               </nav>
             )}
           </div>
-          <div className="flex justify-end gap-2  ">
-            <Button type="default">Sign In</Button>
-            <Button type="primary">Sign Up</Button>
+
+          <div className="flex items-center gap-2">
+            {/* Desktop buttons - hidden on mobile */}
+            {screens.md ? (
+              <>
+                <Button type="default">Sign In</Button>
+                <Button type="primary">Sign Up</Button>
+              </>
+            ) : (
+              <Button
+                type="text"
+                icon={<MenuOutlined style={{ color: "white" }} />}
+                onClick={() => setMobileMenuOpen(true)}
+              />
+            )}
           </div>
         </div>
       </header>
+
+      <Drawer
+        title="Menu"
+        placement="right"
+        onClose={() => setMobileMenuOpen(false)}
+        open={mobileMenuOpen}
+        width={300}
+      >
+        <div className="flex flex-col gap-4">
+          <a
+            href="#products"
+            className="block py-2 text-muted-foreground hover:text-foreground"
+            onClick={() => setMobileMenuOpen(false)}
+          >
+            Products
+          </a>
+          <a
+            href="#about"
+            className="block py-2 text-muted-foreground hover:text-foreground"
+            onClick={() => setMobileMenuOpen(false)}
+          >
+            About
+          </a>
+          <a
+            href="#contact"
+            className="block py-2 text-muted-foreground hover:text-foreground"
+            onClick={() => setMobileMenuOpen(false)}
+          >
+            Contact
+          </a>
+          <div className="border-t pt-4 flex flex-col gap-4">
+            <Button type="default" block>
+              Sign In
+            </Button>
+            <Button type="primary" block>
+              Sign Up
+            </Button>
+          </div>
+        </div>
+      </Drawer>
 
       <main className="flex-1 ">
         <div className={horizontalPadding}>

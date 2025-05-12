@@ -69,13 +69,19 @@ export default function ProductCard({ product }) {
       bodyStyle={{ padding: 16 }}
     >
       <Meta
-        title={<Text ellipsis={{ tooltip: product.name }}>{product.name}</Text>}
+        title={
+          <div className="flex justify-between items-start gap-2">
+            <Text ellipsis={{ tooltip: product.name }} className="flex-1">
+              {product.name}
+            </Text>
+            <Tag color="blue">{product.category}</Tag>
+          </div>
+        }
         description={
           <Text type="secondary" ellipsis>
             {product.brand}
           </Text>
         }
-        avatar={<Tag color="blue">{product.category}</Tag>}
       />
 
       <div className="mt-3 flex items-center">
