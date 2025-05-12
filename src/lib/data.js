@@ -7,7 +7,7 @@ export const skinProducts = [
     description:
       "A gentle, hydrating cleanser that removes dirt, oil, and makeup without disrupting the skin barrier.",
     price: 14.99,
-    image: "/placeholder.svg?height=300&width=300",
+    image: "/images/hydrating-facial-cleanser-cerave.jpeg",
     rating: 4,
     reviewCount: 128,
     ingredients: ["Ceramides", "Hyaluronic Acid", "Glycerin"],

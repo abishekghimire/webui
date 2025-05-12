@@ -1,107 +1,125 @@
-import { Button } from "antd";
+import { Button, Form, Input, Grid, Row, Col } from "antd";
 import ProductCard from "@/components/ProductCard";
 import HeroSection from "@/components/HeroSection";
 import { skinProducts } from "@/lib/data";
 
+const { useBreakpoint } = Grid;
+
 export default function LandingPage() {
+  const screens = useBreakpoint();
+  const horizontalPadding = "px-4 sm:px-6 lg:px-8";
+
   return (
     <div className="min-h-screen bg-background">
-      <header className="sticky top-0 z-40 w-full border-b bg-background">
-        <div className="container flex h-16 items-center space-x-4 sm:justify-between sm:space-x-0">
-          <div className="flex gap-6 md:gap-10">
+      <header
+        className={`sticky top-0 z-40 w-full border-b bg-background ${horizontalPadding}`}
+      >
+        <div className="container flex h-16 items-center justify-between ">
+          <div className="flex items-center gap-6 md:gap-10 px-34">
             <a href="/" className="flex items-center space-x-2">
-              <span className="inline-block font-bold text-xl ml-4">
-                SkinReview
-              </span>
+              <span className="inline-block font-bold text-xl">SkinReview</span>
             </a>
-            <nav className="hidden md:flex gap-6">
-              <a
-                href="#products"
-                className="flex items-center text-sm font-medium text-muted-foreground hover:text-foreground"
-              >
-                Products
-              </a>
-              <a
-                href="#about"
-                className="flex items-center text-sm font-medium text-muted-foreground hover:text-foreground"
-              >
-                About
-              </a>
-              <a
-                href="#contact"
-                className="flex items-center text-sm font-medium text-muted-foreground hover:text-foreground"
-              >
-                Contact
-              </a>
-            </nav>
+            {screens.md && (
+              <nav className="flex gap-6">
+                <a
+                  href="#products"
+                  className="flex items-center text-sm font-medium text-muted-foreground hover:text-foreground"
+                >
+                  Products
+                </a>
+                <a
+                  href="#about"
+                  className="flex items-center text-sm font-medium text-muted-foreground hover:text-foreground"
+                >
+                  About
+                </a>
+                <a
+                  href="#contact"
+                  className="flex items-center text-sm font-medium text-muted-foreground hover:text-foreground"
+                >
+                  Contact
+                </a>
+              </nav>
+            )}
           </div>
-          <div className="flex flex-1 gap-2 mr-4 items-center justify-end space-x-4">
-            <Button variant="outline">Sign In</Button>
-            <Button>Sign Up</Button>
+          <div className="flex justify-end gap-2  ">
+            <Button type="default">Sign In</Button>
+            <Button type="primary">Sign Up</Button>
           </div>
         </div>
       </header>
 
-      <main className="flex-1 ml-[6%] mr-[6%]">
-        <HeroSection />
+      <main className="flex-1 ">
+        <div className={horizontalPadding}>
+          <HeroSection />
+        </div>
 
-        <section id="products" className="container py-12 md:py-24 lg:py-32">
-          <div className="mx-auto flex max-w-[58rem] flex-col items-center justify-center gap-4 text-center">
-            <h2 className="font-bold text-3xl leading-[1.1] sm:text-3xl md:text-5xl">
-              Discover Skin Products
-            </h2>
-            <p className="max-w-[85%] leading-normal text-muted-foreground sm:text-lg sm:leading-7">
-              Browse our curated collection of skin care products and read real
-              reviews from users with similar skin concerns.
-            </p>
-          </div>
+        <section id="products" className="py-12 md:py-24 lg:py-32">
+          <div className={`container mx-auto ${horizontalPadding}`}>
+            <div className="flex max-w-[58rem] flex-col items-center justify-center gap-4 text-center mx-auto">
+              <h2 className="font-bold text-3xl leading-[1.1] sm:text-3xl md:text-5xl">
+                Discover Skin Products
+              </h2>
+              <p className="max-w-[85%] leading-normal text-muted-foreground sm:text-lg sm:leading-7">
+                Browse our curated collection of skin care products and read
+                real reviews from users with similar skin concerns.
+              </p>
+            </div>
 
-          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 mt-12">
-            {skinProducts.map((product) => (
-              <ProductCard key={product.id} product={product} />
-            ))}
-          </div>
-        </section>
-
-        <section
-          id="about"
-          className="container py-12 md:py-24 lg:py-32 bg-muted/50"
-        >
-          <div className="mx-auto flex max-w-[58rem] flex-col items-center justify-center gap-4 text-center">
-            <h2 className="font-bold text-3xl leading-[1.1] sm:text-3xl md:text-5xl">
-              About SkinReview
-            </h2>
-            <p className="max-w-[85%] leading-normal text-muted-foreground sm:text-lg sm:leading-7">
-              SkinReview is a community-driven platform where users can share
-              their experiences with skin care products. Our mission is to help
-              people find the right products for their specific skin concerns by
-              providing honest, detailed reviews from real users.
-            </p>
+            <Row gutter={[24, 24]} className="mt-12 px-8">
+              {skinProducts.map((product) => (
+                <Col key={product.id} xs={24} sm={12} lg={8} xl={6}>
+                  <ProductCard product={product} />
+                </Col>
+              ))}
+            </Row>
           </div>
         </section>
 
-        <section id="contact" className="container py-12 md:py-24 lg:py-32">
-          <div className="mx-auto flex max-w-[58rem] flex-col items-center justify-center gap-4 text-center">
-            <h2 className="font-bold text-3xl leading-[1.1] sm:text-3xl md:text-5xl">
-              Contact Us
-            </h2>
-            <p className="max-w-[85%] leading-normal text-muted-foreground sm:text-lg sm:leading-7">
-              Have questions or suggestions? We'd love to hear from you!
-            </p>
-            <div className="w-full max-w-sm space-y-2">
-              <form className="flex flex-col space-y-4">
-                <input
-                  type="email"
-                  placeholder="Your email"
-                  className="flex h-10 w-full  rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
-                />
-                <div className="h-4" />
-                <textarea
-                  placeholder="Your message"
-                  className="flex min-h-[80px] w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
-                />
-                <Button type="submit">Send Message</Button>
-              </form>
+        <section id="about" className="py-12 md:py-24 lg:py-32 bg-muted/50">
+          <div className={`container mx-auto ${horizontalPadding}`}>
+            <div className="mx-auto flex max-w-[58rem] flex-col items-center justify-center gap-4 text-center">
+              <h2 className="font-bold text-3xl leading-[1.1] sm:text-3xl md:text-5xl">
+                About SkinReview
+              </h2>
+              <p className="max-w-[85%] leading-normal text-muted-foreground sm:text-lg sm:leading-7">
+                SkinReview is a community-driven platform where users can share
+                their experiences with skin care products. Our mission is to
+                help people find the right products for their specific skin
+                concerns by providing honest, detailed reviews from real users.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section id="contact" className="py-12 md:py-24 lg:py-32">
+          <div className={`container mx-auto ${horizontalPadding}`}>
+            <div className="mx-auto flex max-w-[58rem] flex-col items-center justify-center gap-4 text-center">
+              <h2 className="font-bold text-3xl leading-[1.1] sm:text-3xl md:text-5xl">
+                Contact Us
+              </h2>
+              <p className="max-w-[85%] leading-normal text-muted-foreground sm:text-lg sm:leading-7">
+                Have questions or suggestions? We'd love to hear from you!
+              </p>
+              <div className="w-full max-w-md">
+                <Form layout="vertical">
+                  <Form.Item label="Email" name="email">
+                    <Input type="email" placeholder="Your email" size="large" />
+                  </Form.Item>
+                  <Form.Item label="Message" name="message">
+                    <Input.TextArea
+                      placeholder="Your message"
+                      rows={4}
+                      size="large"
+                    />
+                  </Form.Item>
+                  <Form.Item>
+                    <Button type="primary" htmlType="submit" size="large" block>
+                      Send Message
+                    </Button>
+                  </Form.Item>
+                </Form>
+              </div>
             </div>
           </div>
         </section>
