@@ -87,7 +87,7 @@ export default function ProductCard({ product }) {
         centered
         className="custom-modal"
         bodyStyle={{
-          maxHeight: "calc(100vh - 200px)",
+          maxHeight: "calc(100vh - 50px)",
           overflowY: "auto",
           padding: "24px",
         }}
