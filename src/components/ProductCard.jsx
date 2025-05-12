@@ -4,7 +4,6 @@ import { useState } from "react";
 import {
   Button,
   Card,
-  Badge,
   Modal,
   List,
   Avatar,
@@ -12,6 +11,8 @@ import {
   Tag,
   Space,
   Divider,
+  Typography,
+  Skeleton,
 } from "antd";
 import { StarOutlined, ShoppingCartOutlined } from "@ant-design/icons";
 import Image from "next/image";
@@ -19,18 +20,14 @@ import ReviewForm from "./ReviewForm";
 import ReviewList from "./ReviewList";
 
 const { Meta } = Card;
+const { Text } = Typography;
 
 export default function ProductCard({ product }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isReviewFormOpen, setIsReviewFormOpen] = useState(false);
 
-  const showModal = () => {
-    setIsModalOpen(true);
-  };
-
-  const handleCancel = () => {
-    setIsModalOpen(false);
-  };
+  const showModal = () => setIsModalOpen(true);
+  const handleCancel = () => setIsModalOpen(false);
 
   return (
     <Card
@@ -42,24 +39,46 @@ export default function ProductCard({ product }) {
             alt={product.name}
             fill
             className="object-cover"
+            priority
           />
         </div>
       }
       actions={[
-        <Button type="default" block onClick={showModal}>
-          View Details
-        </Button>,
-        <Button type="primary" block icon={<ShoppingCartOutlined />}>
-          Add to Cart
-        </Button>,
+        <div
+          key="actions"
+          className="flex flex-col sm:flex-row gap-2 w-full px-2"
+        >
+          <Button
+            type="default"
+            block
+            onClick={showModal}
+            className="sm:flex-1"
+          >
+            View Details
+          </Button>
+          <Button
+            type="primary"
+            block
+            icon={<ShoppingCartOutlined />}
+            className="sm:flex-1"
+          >
+            Add to Cart
+          </Button>
+        </div>,
       ]}
+      bodyStyle={{ padding: 16 }}
     >
       <Meta
-        title={product.name}
-        description={product.brand}
+        title={<Text ellipsis={{ tooltip: product.name }}>{product.name}</Text>}
+        description={
+          <Text type="secondary" ellipsis>
+            {product.brand}
+          </Text>
+        }
         avatar={<Tag color="blue">{product.category}</Tag>}
       />
-      <div className="mt-2">
+
+      <div className="mt-3 flex items-center">
         <Rate
           disabled
           defaultValue={product.rating}
@@ -67,16 +86,22 @@ export default function ProductCard({ product }) {
           character={<StarOutlined />}
           style={{ fontSize: 14 }}
         />
-        <span className="text-xs text-gray-500 ml-2">
+        <Text type="secondary" className="text-xs ml-2">
           ({product.reviewCount} reviews)
-        </span>
+        </Text>
       </div>
-      <div className="mt-2">
-        <p className="text-gray-500 line-clamp-2 text-sm">
-          {product.description}
-        </p>
-        <p className="font-medium mt-2">${product.price.toFixed(2)}</p>
-      </div>
+
+      <Text
+        type="secondary"
+        className="text-sm mt-2 line-clamp-2"
+        ellipsis={{ tooltip: product.description }}
+      >
+        {product.description}
+      </Text>
+
+      <Text strong className="block mt-3 text-lg">
+        ${product.price.toFixed(2)}
+      </Text>
 
       <Modal
         title={product.name}
@@ -85,14 +110,19 @@ export default function ProductCard({ product }) {
         footer={null}
         width={800}
         centered
-        className="custom-modal"
-        bodyStyle={{
-          maxHeight: "calc(100vh - 50px)",
-          overflowY: "auto",
-          padding: "24px",
+        className="product-modal"
+        styles={{
+          body: {
+            maxHeight: "calc(100vh - 120px)",
+            overflowY: "auto",
+            padding: "24px",
+          },
+          content: {
+            maxHeight: "100vh",
+          },
         }}
       >
-        <div className="grid gap-4 md:grid-cols-2">
+        <div className="grid gap-6 md:grid-cols-2">
           <div className="aspect-square relative rounded-lg overflow-hidden">
             <Image
               src={product.image || "/placeholder.svg"}
@@ -101,31 +131,41 @@ export default function ProductCard({ product }) {
               className="object-cover"
             />
           </div>
+
           <div className="space-y-4">
             <div>
-              <h3 className="font-medium">Description</h3>
-              <p className="text-gray-500 text-sm">{product.description}</p>
+              <Text strong className="block mb-2">
+                Description
+              </Text>
+              <Text type="secondary">{product.description}</Text>
             </div>
+
             <div>
-              <h3 className="font-medium">Key Ingredients</h3>
+              <Text strong className="block mb-2">
+                Key Ingredients
+              </Text>
               <List
                 size="small"
                 dataSource={product.ingredients}
                 renderItem={(item) => <List.Item>{item}</List.Item>}
               />
             </div>
+
             <div>
-              <h3 className="font-medium">Good For</h3>
-              <Space size={[8, 8]} wrap className="mt-2">
+              <Text strong className="block mb-2">
+                Good For
+              </Text>
+              <Space size={[8, 8]} wrap>
                 {product.goodFor.map((concern, i) => (
                   <Tag key={i}>{concern}</Tag>
                 ))}
               </Space>
             </div>
-            <div className="flex justify-between items-center">
-              <span className="font-bold text-lg">
+
+            <div className="flex justify-between items-center pt-4">
+              <Text strong className="text-lg">
                 ${product.price.toFixed(2)}
-              </span>
+              </Text>
               <Button type="primary" icon={<ShoppingCartOutlined />}>
                 Add to Cart
               </Button>
@@ -133,11 +173,13 @@ export default function ProductCard({ product }) {
           </div>
         </div>
 
-        <Divider />
+        <Divider className="my-6" />
 
-        <div className="border-t pt-4">
+        <div className="reviews-section">
           <div className="flex justify-between items-center mb-4">
-            <h3 className="font-bold text-lg">Reviews</h3>
+            <Text strong className="text-lg">
+              Reviews
+            </Text>
             <Button
               onClick={() => setIsReviewFormOpen(!isReviewFormOpen)}
               type="default"

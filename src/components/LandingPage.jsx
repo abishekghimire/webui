@@ -10,7 +10,9 @@ export default function LandingPage() {
         <div className="container flex h-16 items-center space-x-4 sm:justify-between sm:space-x-0">
           <div className="flex gap-6 md:gap-10">
             <a href="/" className="flex items-center space-x-2">
-              <span className="inline-block font-bold text-xl">SkinReview</span>
+              <span className="inline-block font-bold text-xl ml-4">
+                SkinReview
+              </span>
             </a>
             <nav className="hidden md:flex gap-6">
               <a
@@ -33,7 +35,7 @@ export default function LandingPage() {
               </a>
             </nav>
           </div>
-          <div className="flex flex-1 items-center justify-end space-x-4">
+          <div className="flex flex-1 gap-2 mr-4 items-center justify-end space-x-4">
             <Button variant="outline">Sign In</Button>
             <Button>Sign Up</Button>
           </div>
@@ -91,8 +93,9 @@ export default function LandingPage() {
                 <input
                   type="email"
                   placeholder="Your email"
-                  className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+                  className="flex h-10 w-full  rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
                 />
+                <div className="h-4" />
                 <textarea
                   placeholder="Your message"
                   className="flex min-h-[80px] w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"

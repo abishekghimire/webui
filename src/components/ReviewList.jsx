@@ -58,9 +58,13 @@ export default function ReviewList({ productId }) {
             avatar={<Avatar>{review.name.charAt(0)}</Avatar>}
             title={
               <Space>
-                <Text strong>{review.name}</Text>
-                <Tag>{review.skinType} Skin</Tag>
-                <Tag>{review.skinConcern}</Tag>
+                <Text strong style={{ whiteSpace: "nowrap" }}>
+                  {review.name}
+                </Text>
+                <div style={{ display: "flex", flexWrap: "wrap", gap: 4 }}>
+                  <Tag>{review.skinType} Skin</Tag>
+                  <Tag>{review.skinConcern}</Tag>
+                </div>
               </Space>
             }
             description={

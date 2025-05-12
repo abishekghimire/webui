@@ -112,3 +112,56 @@ body.ant-modal-open {
     overflow-y: scroll;
   }
 }
+
+/* Add to your global styles or component CSS */
+.ant-list-item-meta-title {
+  overflow: visible !important;
+  white-space: normal !important;
+}
+
+.ant-list-item-meta-content {
+  min-width: 0; /* Allows text to truncate properly */
+}
+
+@media (max-width: 375px) {
+  /* iPhone 12 Pro width */
+  .ant-list-item-meta-avatar {
+    margin-right: 8px !important;
+  }
+
+  .ant-tag {
+    font-size: 12px;
+    padding: 0 6px;
+  }
+}
+
+/* Responsive button layout */
+@media (max-width: 640px) {
+  .ant-card-actions > li {
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 8px !important;
+  }
+}
+
+/* Modal mobile optimization */
+@media (max-width: 768px) {
+  .product-modal {
+    max-width: 100vw;
+    margin: 0;
+    top: 0;
+    padding-bottom: 0;
+  }
+
+  .product-modal .ant-modal-content {
+    height: 100vh;
+    border-radius: 0;
+  }
+}
+
+/* iOS scroll fix */
+@supports (-webkit-touch-callout: none) {
+  .product-modal .ant-modal-content {
+    height: -webkit-fill-available;
+  }
+}
