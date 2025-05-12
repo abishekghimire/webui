@@ -112,20 +112,27 @@ export default function ProductCard({ product }) {
         title={product.name}
         open={isModalOpen}
         onCancel={handleCancel}
-        footer={null}
+        footer={
+          <div className="flex justify-end">
+            <Button type="default" onClick={handleCancel}>
+              Cancel
+            </Button>
+          </div>
+        }
         width={800}
         centered
         className="product-modal"
         styles={{
           body: {
-            maxHeight: "calc(100vh - 120px)",
+            maxHeight: "calc(100dvh - 120px)",
             overflowY: "auto",
             padding: "24px",
           },
           content: {
-            maxHeight: "100vh",
+            maxHeight: "100dvh",
           },
         }}
+        wrapClassName="fullscreen-mobile-modal"
       >
         <div className="grid gap-6 md:grid-cols-2">
           <div className="aspect-square relative rounded-lg overflow-hidden">
