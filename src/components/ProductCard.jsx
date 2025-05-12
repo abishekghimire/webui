@@ -34,10 +34,9 @@ export default function ProductCard({ product }) {
       hoverable
       cover={
         <div className="aspect-square relative">
-          <Image
+          <img
             src={product.image || "/placeholder.svg"}
             alt={product.name}
-            fill
             className="object-cover"
             priority
           />

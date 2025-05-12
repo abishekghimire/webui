@@ -35,7 +35,7 @@ export const skinProducts = [
     description:
       "High-strength vitamin and mineral formula to reduce the appearance of blemishes and congestion.",
     price: 5.9,
-    image: "/images/niaciamide10%-zinc1%-the-ordinary.jpeg",
+    image: "/images/niaciamide10-zinc1-the-ordinary.jpg",
     rating: 4,
     reviewCount: 215,
     ingredients: ["Niacinamide", "Zinc PCA"],
@@ -49,7 +49,7 @@ export const skinProducts = [
     description:
       "Lightweight, fast-absorbing moisturizer that provides 24-hour hydration for all skin types.",
     price: 12.99,
-    image: "/placeholder.svg?height=300&width=300",
+    image: "/images/daily-mousterizing-lotion-cetaphil.jpg",
     rating: 4,
     reviewCount: 156,
     ingredients: ["Glycerin", "Vitamin E", "Avocado Oil"],
@@ -63,7 +63,7 @@ export const skinProducts = [
     description:
       "Concentrated retinol serum that visibly improves the appearance of fine lines, wrinkles, and uneven skin tone.",
     price: 58.0,
-    image: "/placeholder.svg?height=300&width=300",
+    image: "/images/retinol-serum-paulas-choice.jpg",
     rating: 5,
     reviewCount: 92,
     ingredients: ["Retinol", "Peptides", "Vitamin C"],
@@ -77,7 +77,7 @@ export const skinProducts = [
     description:
       "Lightweight, oil-free face sunscreen with transparent zinc oxide protects against UVA/UVB rays.",
     price: 36.5,
-    image: "/placeholder.svg?height=300&width=300",
+    image: "/images/mineral-sunscreen-spf-50-eltamd.jpg",
     rating: 5,
     reviewCount: 178,
     ingredients: ["Zinc Oxide", "Vitamin E", "Niacinamide"],
@@ -91,7 +91,7 @@ export const skinProducts = [
     description:
       "10-minute exfoliating facial that improves the appearance of skin texture and reduces the look of fine lines.",
     price: 7.2,
-    image: "/placeholder.svg?height=300&width=300",
+    image: "/images/aha30-bha2-peeling-solution-the-ordianry.jpeg",
     rating: 4,
     reviewCount: 203,
     ingredients: ["Glycolic Acid", "Lactic Acid", "Salicylic Acid"],
@@ -105,7 +105,7 @@ export const skinProducts = [
     description:
       "Lightweight essence that hydrates and repairs damaged skin while improving skin elasticity.",
     price: 25.0,
-    image: "/images/snail-mucin-96%-power-essence-cosrex.jpg",
+    image: "/images/snail-mucin-96-power-essence-cosrex.jpg",
     rating: 5,
     reviewCount: 145,
     ingredients: ["Snail Secretion Filtrate", "Sodium Hyaluronate", "Betaine"],
