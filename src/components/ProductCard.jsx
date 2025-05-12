@@ -85,7 +85,12 @@ export default function ProductCard({ product }) {
         footer={null}
         width={800}
         centered
-        className="max-h-[90vh] overflow-y-auto"
+        className="custom-modal"
+        bodyStyle={{
+          maxHeight: "calc(100vh - 200px)",
+          overflowY: "auto",
+          padding: "24px",
+        }}
       >
         <div className="grid gap-4 md:grid-cols-2">
           <div className="aspect-square relative rounded-lg overflow-hidden">
