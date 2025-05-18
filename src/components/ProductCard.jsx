@@ -65,7 +65,7 @@ export default function ProductCard({ product }) {
           </Button>
         </div>,
       ]}
-      bodyStyle={{ padding: 16 }}
+      styles={{ body: { padding: 16 } }}
     >
       <Meta
         title={
@@ -140,7 +140,7 @@ export default function ProductCard({ product }) {
               src={product.image || "/placeholder.svg"}
               alt={product.name}
               fill
-              className="object-cover"
+              className="object-cover "
             />
           </div>
 
