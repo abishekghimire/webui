@@ -30,8 +30,8 @@ export default function HeroSection() {
             </div>
           </div>
           <div className="flex items-center justify-center md:order-1">
-            <div className="relative h-[300px] md:h-[450px] w-full max-w-[350px] rounded-xl bg-gradient-to-b from-pink-100 to-rose-100 p-1 shadow-2xl">
-              <div className="absolute inset-0 flex items-center justify-center rounded-xl bg-white p-6">
+            <div className="relative h-[300px] md:h-[450px] w-full max-w-[350px] rounded-xl bg-white p-1 shadow-2xl">
+              {/* <div className="absolute inset-0 flex items-center justify-center rounded-xl bg-white p-6">
                 <div className="space-y-4">
                   <div className="h-24 w-24 rounded-full bg-gradient-to-r from-pink-200 to-rose-200 mx-auto"></div>
                   <div className="h-4 w-full rounded-full bg-muted mx-auto"></div>
@@ -45,7 +45,12 @@ export default function HeroSection() {
                     <div className="h-6 w-16 rounded-md bg-muted"></div>
                   </div>
                 </div>
-              </div>
+              </div> */}
+              <img
+                src="images/skinc.jpg"
+                alt=""
+                className="h-full w-full object-cover"
+              />
             </div>
           </div>
         </div>

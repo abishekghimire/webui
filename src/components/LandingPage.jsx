@@ -45,7 +45,7 @@ export default function LandingPage() {
                 About SkinReview
               </h2>
               <p className="max-w-[85%] leading-normal text-muted-foreground sm:text-lg sm:leading-7">
-                SkinReview is a community-driven platform where users can share
+                SkinC. is a community-driven platform where users can share
                 their experiences with skin care products. Our mission is to
                 help people find the right products for their specific skin
                 concerns by providing honest, detailed reviews from real users.

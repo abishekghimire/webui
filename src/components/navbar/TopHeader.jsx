@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import { Grid, Button, Drawer, Input } from "antd"; // ✅ Added Input
 import { MenuOutlined } from "@ant-design/icons";
@@ -31,9 +30,7 @@ const TopHeader = () => {
         <div className="flex h-16 items-center justify-between">
           <div className="flex items-center gap-6 md:gap-10 ml-6">
             <Link href="/">
-              <span className="inline-block font-bold text-xl">
-                SkinReview
-              </span>
+              <span className="inline-block font-bold text-xl ">SkinC.</span>
             </Link>
             {screens.md && (
               <nav className="flex gap-6 items-center">
@@ -139,4 +136,3 @@ const TopHeader = () => {
 };
 
 export default TopHeader;
-
